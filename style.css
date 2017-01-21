@@ -1,0 +1,267 @@
+/*
+	Theme Name: thivinfo
+	Description: Starter Theme based on Knacss.
+	Author: Sébastien Serre
+	Author URI: http://www.sebastien-serre.fr
+	Version: 1.0.2
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Text Domain: thivinfo
+	Tags: grid-layout, left-sidebar, custom-menu, full-width-template, microformats, threaded-comments, translation-ready, custom-background, custom-header, custom-logo, footer-widgets, blog, education, news, portfolio
+
+*/
+
+/* RESET CSS */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+	margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin: 5px auto 5px auto;
+}
+
+.alignright {
+	float:right;
+	margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+	margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.wp-caption {
+	background: #fff;
+	border: 1px solid #f0f0f0;
+	max-width: 96%; /* Image does not overflow the content area */
+	padding: 5px 3px 10px;
+	text-align: center;
+}
+
+.wp-caption.alignnone {
+	margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+	margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+	margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+	border: 0 none;
+	height: auto;
+	margin: 0;
+	max-width: 98.5%;
+	padding: 0;
+	width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	margin: 0;
+	padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	white-space: nowrap;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+.sticky, .bypostauthor, .gallery-caption {background: #A2D9FD; border: 3px solid black; padding: 10px;}
+
+/* Primary Menu */
+
+nav   {
+	height: 30px; /* set to the height you want your menu to be */
+}
+
+nav ul    {
+	margin: 0; padding: 0; /* only needed if you have not done a CSS reset */
+}
+
+nav li    {
+
+	display: block;
+	float: left;
+	line-height: 30px; /* this should be the same as your #main-nav height */
+	height: 30px; /* this should be the same as your #main-nav height */
+	margin: 0; padding: 0; /* only needed if you don't have a reset */
+	position: relative; /* this is needed in order to position sub menus */
+}
+
+nav li a  {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 15px;
+}
+
+nav .current-menu-item a, nav .current_page_item a, nav a:hover {
+	color: #000;
+	background: ##ffffff;
+}
+
+nav ul ul { /* this targets all sub menus */
+	display: none; /* hide all sub menus from view */
+	position: absolute;
+	top: 30px; /* this should be the same height as the top level menu -- height + padding + borders */
+	background: #ffffff;
+}
+
+nav ul ul li { /* this targets all submenu items */
+	float: none; /* overwriting our float up above */
+	width: 150px; /* set to the width you want your sub menus to be. This needs to match the value we set below */
+}
+
+nav ul ul li a { /* target all sub menu item links */
+	padding: 5px 10px; /* give our sub menu links a nice button feel */
+}
+
+ul li:hover > ul {
+	display: block; /* show sub menus when hovering over a parent */
+}
+
+nav#site-navigation {
+	display: flex;
+	justify-content: center;
+}
+/* Widget */
+.sidebar li {
+	list-style-type: none;
+}
+
+.left-sidebar{
+	min-height: 150vh;
+	overflow: hidden;
+	padding: 2rem;
+}
+
+/* CONTENU */
+.content {
+	word-break: break-word;
+	min-height: 100vh;
+}
+
+.main{
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+/* HEADER */
+header,
+.left-sidebar.sidebar.fl.tiny-no-float.one-fifth,
+nav,
+footer{
+	background: #ffffff;
+}
+
+/**
+Footer
+ */
+
+.site-info {
+	display: flex;
+	justify-content: center;
+}
