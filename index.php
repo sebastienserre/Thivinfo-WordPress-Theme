@@ -38,6 +38,7 @@
 
 			endif;
 			comments_template(); ?>
+        </div>
     </article> <!-- main -->
 
 

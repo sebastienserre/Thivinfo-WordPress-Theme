@@ -15,7 +15,7 @@ function thivinfo_load_style(){
 
 add_action('after_setup_theme', 'thfo_load_textdomain');
 function thfo_load_textdomain(){
-	load_theme_textdomain( 'thivinfo', get_stylesheet_directory_uri() . '/languages' );
+	load_theme_textdomain( 'thivinfo', get_stylesheet_directory() . '/languages' );
 }
 
 /**
@@ -71,15 +71,18 @@ function thfo_chg_logo(){
 
 function thfo_header_logo() {
 
-
-	if ( function_exists( 'the_custom_logo' ) ) {
-		$infobox = '<div id="info-box">' . the_custom_logo() . '</div>';
+$logo = get_theme_mod( 'custom_logo' );
+	if ( function_exists( 'the_custom_logo' ) && !empty($logo) ) {
+		$infobox = '<div id="info-box">' . get_custom_logo() . '</div>';
+		return apply_filters( 'thfo_rm_logo', $infobox );
 	} else {
 
-		$infobox = '<div id="info-box"><h1 class="site-title" itemprop="headline"><a href="<?php echo get_site_url(); ?>"
-		                                              class="site-name">' . bloginfo( 'name' ) .' </a></h1>
-		<h2 class="site-description" itemprop="description">' . bloginfo( 'description' ) . ' </h2></div>';
+		$infobox = '<div id="info-box"><h1 class="site-title" itemprop="headline"><a href="<?php get_site_url(); ?>"
+		                                              class="site-name">' . get_bloginfo( 'name' ) .' </a></h1>
+		<h2 class="site-description" itemprop="description">' . get_bloginfo( 'description' ) . ' </h2></div>';
 	}
+
+
 	return apply_filters( 'thfo_rm_logo', $infobox );
 
 
